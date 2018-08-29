@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace hubtelapi_dotnet_v1.CheckOut
@@ -5,7 +6,7 @@ namespace hubtelapi_dotnet_v1.CheckOut
     public class CheckoutRequest
     {
         [JsonProperty("items")]
-        public Item[] Items { get; set; }
+        public List<Item> Items { get; set; }
 
         [JsonProperty("totalAmount")]
         public long TotalAmount { get; set; }

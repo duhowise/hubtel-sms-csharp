@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
+using hubtelapi_dotnet_v1.CheckOut;
 using hubtelapi_dotnet_v1.Hubtel;
 using hubtelapi_dotnet_v1.Payments;
+using Item = hubtelapi_dotnet_v1.CheckOut.Item;
 
 namespace hubtelapi_dotnet_v1
 {
@@ -45,6 +48,30 @@ namespace hubtelapi_dotnet_v1
                      Description = "Hire Purchase",CustomerName = "Duho Wise",
                         PrimaryCallbackUrl = "http://requestb.in/1minotz1",
                        SecondaryCallbackUrl = ""});
+               Console.WriteLine(paymentResponse.Data.Description);
+                
+                
+                
+                //Online checkout Demo
+                var checkout     = new OnlineCheckoutV2(host);
+               var checkoutResponse =
+                   checkout.InitiateInvoice(new CheckoutRequest
+                   {
+                       Description = "",
+                       CallbackUrl = "",
+                       CancellationUrl = "",
+                       ClientReference = "",
+                       Items = new List<Item>
+                       {
+                           new Item{ Name = "",Quantity = 0,UnitPrice = 0},
+                           new Item{ Name = "",Quantity = 0,UnitPrice = 0},
+                           new Item{ Name = "",Quantity = 0,UnitPrice = 0}
+                       },
+                       MerchantAccountNumber = "",
+                       MerchantBusinessLogoUrl = "",
+                       ReturnUrl = "",
+                       TotalAmount = 0
+                   });
                Console.WriteLine(paymentResponse.Data.Description);
 
 
