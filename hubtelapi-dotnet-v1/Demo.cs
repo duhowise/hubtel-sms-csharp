@@ -37,13 +37,15 @@ namespace hubtelapi_dotnet_v1
 
 
 
-                //  //Payment request example using receive payment class
-                //var payments = new PaymentsApi(host);
-                //var paymentResponse =
-                //    payments.RequestPayment(new RecievePayment{ Amount = 0.1M ,Channel = "mtn-gh",ClientReference = "",
-                //        CustomerEmail = "",CustomerMsisdn = "233241952532", Description = "Hire Purchase",CustomerName = "Duho Wise",PrimaryCallbackUrl = "http://requestb.in/1minotz1",
-                //        SecondaryCallbackUrl = ""});
-                //Console.WriteLine(paymentResponse.Data.Description);
+                //Payment request example using receive payment class
+                var payments = new PaymentsApi(host);
+               var paymentResponse =
+                   payments.RequestPayment(new RecievePayment{ Amount = 0.1M ,Channel = "mtn-gh",ClientReference = "",
+                      CustomerEmail = "",CustomerMsisdn = "233241952532",
+                     Description = "Hire Purchase",CustomerName = "Duho Wise",
+                        PrimaryCallbackUrl = "http://requestb.in/1minotz1",
+                       SecondaryCallbackUrl = ""});
+               Console.WriteLine(paymentResponse.Data.Description);
 
 
                 // Transaction Status Check
@@ -70,7 +72,7 @@ namespace hubtelapi_dotnet_v1
                 //Console.WriteLine(statusResponse);
 
 
-                var payments = new PaymentsApi(host);
+                payments = new PaymentsApi(host);
                 var statusResponse =
                     payments.OnlineCheckoutV1(new CreatedInvoice
                     {

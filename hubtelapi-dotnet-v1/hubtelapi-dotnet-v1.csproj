@@ -69,6 +69,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckOut\CheckoutCallback.cs" />
+    <Compile Include="CheckOut\CheckoutRequest.cs" />
+    <Compile Include="CheckOut\CheckoutResponse.cs" />
+    <Compile Include="CheckOut\Data.cs" />
+    <Compile Include="CheckOut\Item.cs" />
+    <Compile Include="CheckOut\OnlineCheckoutV2.cs" />
     <Compile Include="Demo.cs" />
     <Compile Include="Hubtel\PaymentsApi.cs" />
     <Compile Include="Payments\Actions.cs" />
